@@ -1,4 +1,4 @@
-
+package src;
 public class Vehicle {
 	private String model;
     private String marca;
