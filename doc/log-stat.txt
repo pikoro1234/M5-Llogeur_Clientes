@@ -1,0 +1,35 @@
+commit c6e452a5bcb9e2735d62edd4e54503358d83356d
+Author: pikoro1234 <donjuan.jfc@gmail.com>
+Date:   Sat May 25 00:10:46 2019 +0200
+
+    algunas modificaciones a las clases
+
+ Client.java             | 27 +++++++++++++++++++++++++++
+ GestorLloguersLite.java | 38 ++++++++++++++++++++++++++++++++++++++
+ Lloguer.java            | 21 ++++++++++++++++-----
+ Vehicle.java            | 13 ++++++++-----
+ 4 files changed, 89 insertions(+), 10 deletions(-)
+
+commit 0be325134237e46cd7b2442c36168718ce032213
+Author: pikoro1234 <donjuan.jfc@gmail.com>
+Date:   Mon May 20 18:19:11 2019 +0200
+
+    agregado de constructor y metodos de acceso de la clase lloguer
+
+ Client.java             | 25 +++++++++++++++++++++++--
+ GestorLloguersLite.java |  1 +
+ Lloguer.java            | 16 ++++++++++++++++
+ Vehicle.java            | 20 ++++++++++++++++++++
+ 4 files changed, 60 insertions(+), 2 deletions(-)
+
+commit 6d651bbc2fa7e439944a3f47666483a5f15253f8
+Author: pikoro1234 <donjuan.jfc@gmail.com>
+Date:   Mon May 20 17:08:38 2019 +0200
+
+    primeras clases y el doc de la teoria
+
+ Client.java  |   4 ++++
+ Lloguer.java |   4 ++++
+ Vehicle.java |   4 ++++
+ doc.odt      | Bin 0 -> 15933 bytes
+ 4 files changed, 12 insertions(+)
