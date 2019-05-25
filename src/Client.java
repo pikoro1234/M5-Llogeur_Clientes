@@ -48,7 +48,7 @@ public class Client{
     	
     	
         double total = 0;
-        int bonificacions = 0;
+     
         String resultat = "Informe de lloguers del client " +
                 getNom() +
                 " (" + getNif() + ")\n";
@@ -56,7 +56,6 @@ public class Client{
        
             double quantitat = lloguer.quantitat();
 
-            bonificacions += lloguer.bonificacions();
             // composa els resultats d'aquest lloguer
             resultat += "\t" +
                     lloguer.getVehicle().getMarca() +
@@ -66,7 +65,7 @@ public class Client{
 
         // afegeix informació final
         resultat += "Import a pagar: " + importeTotal() + "€\n" +
-                "Punts guanyats: " + bonificacions + "\n";
+                "Punts guanyats: " + bonificacionsTotales() + "\n";
         return resultat;
     }
     
@@ -76,6 +75,14 @@ public class Client{
     		total +=lloguer.quantitat()*30;
     	}
     	return total;
+    }
+    
+    private int bonificacionsTotales() {
+    	int bonificacions = 0;
+    	for	(Lloguer lloguer : lloguers) {
+    		bonificacions += lloguer.bonificacions();
+    	}
+    	return bonificacions;
     }
 
     public int contaLloguers() {
