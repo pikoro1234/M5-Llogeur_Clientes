@@ -45,29 +45,34 @@ public class Client{
     ////////
     public String informe() {
         // XXX: de moment buit
-    	
-    	
-        double total = 0;
-     
-        String resultat = "Informe de lloguers del client " +
-                getNom() +
-                " (" + getNif() + ")\n";
-        for (Lloguer lloguer: lloguers) {
-       
-            double quantitat = lloguer.quantitat();
-
-            // composa els resultats d'aquest lloguer
-            resultat += "\t" +
-                    lloguer.getVehicle().getMarca() +
-                    " " +
-                    lloguer.getVehicle().getModel() + ": " +(lloguer.quantitat() * 30)+"€"+"\n";
-        }
-
-        // afegeix informació final
-        resultat += "Import a pagar: " + importeTotal() + "€\n" +
-                "Punts guanyats: " + bonificacionsTotales() + "\n";
-        return resultat;
+        return  crea_cabecera()+implementa_detalle()+crea_fin_pag();
     }
+    
+    private String crea_cabecera() {
+    	return "Informe de lloguers del client "+getNom() +" (" + getNif() + ")\n";
+    }
+    
+    private String implementa_detalle() {
+    	String resultat = "";
+    	 for (Lloguer lloguer: lloguers) {
+    	       
+            // double quantitat = lloguer.quantitat();
+
+             // composa els resultats d'aquest lloguer
+             resultat += "\t" +
+                     lloguer.getVehicle().getMarca() +
+                     " " +
+                     lloguer.getVehicle().getModel() + ": " +(lloguer.quantitat() * 30)+"€"+"\n";
+         }
+    	 return resultat;
+    }
+    
+    private String crea_fin_pag() {
+    	 return "Import a pagar: " + importeTotal() + "€\n" +"Punts guanyats: " + bonificacionsTotales() + "\n";
+    	
+    }
+    
+    
     
     private double importeTotal() {
     	double total = 0;
