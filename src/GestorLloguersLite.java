@@ -8,18 +8,20 @@ public class GestorLloguersLite {
 
     static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-    public static void main(String[] args) throws ParseException {
+    /*public static void main(String[] args) throws ParseException*/ 
+    	public static Client NuevoCliente() throws ParseException {
     
         Client jorge = new Client("y39164503p ","Jorge Fiorilo", "987654321");
         
         jorge.afegeix(new Lloguer(dateFormat.parse("10/11/2019"),10,new Vehicle("toyota", "Runner", Vehicle.GOLD)));
         
-        jorge.afegeix(new Lloguer(dateFormat.parse("05/02/2018"),15,new Vehicle("Nissan", "Pathfinder", Vehicle.LUXE)));
+        jorge.afegeix(new Lloguer(dateFormat.parse("05/02/2018"),20,new Vehicle("nissan", "Pathfinder", Vehicle.LUXE)));
         
-        jorge.afegeix(new Lloguer(dateFormat.parse("25/07/2019"),20,new Vehicle("Kia", "Piccanto", Vehicle.BASIC)));
+        jorge.afegeix(new Lloguer(dateFormat.parse("25/07/2019"),30,new Vehicle("kia", "Piccanto", Vehicle.BASIC)));
        
        
-        System.out.println(toString(jorge));
+       // System.out.println(toString(jorge));
+        return jorge;
 
     }
 
