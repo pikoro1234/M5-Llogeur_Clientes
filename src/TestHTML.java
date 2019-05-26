@@ -32,7 +32,7 @@ class TestHTML {
         assertEquals(client.informeHTML(), "<h1>Informe de lloguers</h1>\n" +
                 "<p>Informe de lloguers del client <em>jorge</em> (<strong>111222</strong>)</p>\n" +
                 "<table>\n" +
-                "<tr><td><strong>Ferrari</strong></td><td><strong>murci</strong></td><td><strong>Import</strong></td></tr>     </table>\n" +
+                "<tr><td><strong>Marca</strong></td><td><strong>Model</strong></td><td><strong>Import</strong></td></tr>     </table>\n" +
                 "<p>Import a pagar: <em>0.0€</em></p>\n" +
                 "<p>Punts guanyats: <em>0</em></p>\n"+
                 "<p>Punts guanyats: <em>0</em></p>");
