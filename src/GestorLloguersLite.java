@@ -23,10 +23,11 @@ public class GestorLloguersLite {
     		Vehicle auto = new Vehicle("Ferrari", "murci",Vehicle.LUXE);
     		Lloguer llog = new Lloguer(dateFormat.parse("01/10/19"),1,new Vehicle("piccanto","kia",Vehicle.BASIC));
     		llog.setVehicle(auto);
-    		client.afegeix(new Lloguer(dateFormat.parse("01/10/19"),1,new Vehicle("piccanto","kia",Vehicle.BASIC)));
-    		client.afegeix(new Lloguer(dateFormat.parse("10/10/19"),1,new Vehicle("toyota","prius",Vehicle.GOLD)));
+    		client.afegeix(new Lloguer(dateFormat.parse("01/10/19"),1,new Vehicle("kia","piccanto",Vehicle.BASIC)));
+    		client.afegeix(new Lloguer(dateFormat.parse("10/10/19"),1,new Vehicle("prius","toyota",Vehicle.GOLD)));
     		System.out.println("datos prueba "+client.getNom()+" "+client.getNif()+" "+client.contaLloguers());
     		System.out.println("cantidad alquilados "+client.contaLloguers()+ " ");
+    		System.out.println("informe HTML "+client.informeHTML());
     		
     		System.out.println("fechas "+llog.bonificacions());
     		System.out.println("auto: "+auto.getCategoria()+auto.getMarca()+auto.getModel()+"get vehiculo "+llog.getVehicle());
