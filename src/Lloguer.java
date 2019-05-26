@@ -24,12 +24,13 @@ public class Lloguer {
 
     public void setDies(int dies) { this.dies = dies; }
     
-    public void setVehicle(Vehicle vehicle) {this.vehicle = vehicle;}
+    public void setVehicle(Vehicle vehicle) {this.vehicle=vehicle;}
     
     public Vehicle getVehicle() {return vehicle;}
     
     public double quantitat() {
     	double quantitat = 0;
+    	
     	switch (this.getVehicle().getCategoria()){
     		case Vehicle.BASIC:
     			quantitat +=3;

@@ -4,27 +4,37 @@ import java.text.ParseException;
 
 import java.text.SimpleDateFormat;
 
+
 public class GestorLloguersLite {
 
     static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-    /*public static void main(String[] args) throws ParseException*/ 
-    	public static Client NuevoCliente() throws ParseException {
     
-        Client jorge = new Client("y39164503p ","Jorge Fiorilo", "987654321");
-        
-        jorge.afegeix(new Lloguer(dateFormat.parse("10/11/2019"),10,new Vehicle("toyota", "Runner", Vehicle.GOLD)));
-        
-        jorge.afegeix(new Lloguer(dateFormat.parse("05/02/2018"),20,new Vehicle("nissan", "Pathfinder", Vehicle.LUXE)));
-        
-        jorge.afegeix(new Lloguer(dateFormat.parse("25/07/2019"),30,new Vehicle("kia", "Piccanto", Vehicle.BASIC)));
-       
-       
-       // System.out.println(toString(jorge));
-        return jorge;
-
+    
+    public static void main(String[] args) throws ParseException {
+    	
+    	NuevoCliente();
+    	
     }
 
+    
+    public static Client NuevoCliente() throws ParseException {
+    		
+    		Client client = new Client("111222","jorge", "12345678");
+    		Vehicle auto = new Vehicle("Ferrari", "murci",Vehicle.LUXE);
+    		Lloguer llog = new Lloguer(dateFormat.parse("01/10/19"),1,new Vehicle("piccanto","kia",Vehicle.BASIC));
+    		llog.setVehicle(auto);
+    		client.afegeix(new Lloguer(dateFormat.parse("01/10/19"),1,new Vehicle("piccanto","kia",Vehicle.BASIC)));
+    		client.afegeix(new Lloguer(dateFormat.parse("10/10/19"),1,new Vehicle("toyota","prius",Vehicle.GOLD)));
+    		System.out.println("datos prueba "+client.getNom()+" "+client.getNif()+" "+client.contaLloguers());
+    		System.out.println("cantidad alquilados "+client.contaLloguers()+ " ");
+    		
+    		System.out.println("fechas "+llog.bonificacions());
+    		System.out.println("auto: "+auto.getCategoria()+auto.getMarca()+auto.getModel()+"get vehiculo "+llog.getVehicle());
+    		return client;
+    	}
+
+    
+    
   	 public static String toString(Client client) {
         String string = "Client: " + client.getNom() + "\n\t\t"
                         + client.getNif() + "\n\t\t"

@@ -4,11 +4,11 @@ import java.util.Vector;
 
 public class Client{
 	
-
 	private String nif;
     private String nom;
     private String telefon;
     public Vector<Lloguer> lloguers;
+    private static final double EUROS_PER_UNITAT_DE_COST = 30;
 
     public Client(String nif, String nom, String telefon) {
     this.nif = nif;
@@ -39,13 +39,10 @@ public class Client{
     public boolean conte(Lloguer lloguer) {
         return lloguers.contains(lloguer);
     }
-    
-    
-    
     ////////
     public String informe() {
         // XXX: de moment buit
-        return  crea_cabecera()+implementa_detalle()+crea_fin_pag();
+        return crea_cabecera()+implementa_detalle()+crea_fin_pag();
     }
     
     private String crea_cabecera() {
@@ -55,14 +52,9 @@ public class Client{
     private String implementa_detalle() {
     	String resultat = "";
     	 for (Lloguer lloguer: lloguers) {
-    	       
-            // double quantitat = lloguer.quantitat();
-
-             // composa els resultats d'aquest lloguer
-             resultat += "\t" +
-                     lloguer.getVehicle().getMarca() +
-                     " " +
-                     lloguer.getVehicle().getModel() + ": " +(lloguer.quantitat() * 30)+"€"+"\n";
+    	     
+             resultat += "\t" +lloguer.getVehicle().getMarca()+" " +
+             lloguer.getVehicle().getModel()+": "+(lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST)+"€"+"\n";
          }
     	 return resultat;
     }
@@ -77,7 +69,7 @@ public class Client{
     private double importeTotal() {
     	double total = 0;
     	for(Lloguer lloguer : lloguers) {
-    		total +=lloguer.quantitat()*30;
+    		total +=(lloguer.quantitat() * EUROS_PER_UNITAT_DE_COST);
     	}
     	return total;
     }
