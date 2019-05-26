@@ -10,9 +10,9 @@ public class Lloguer {
 	  private static final double PLUS_LLOGUER_LLARG_GOLD = 2.5;
 	  private static final int DIES_INICIALS_BASIC = 3;
 	  private static final int DIES_INICIALS_GOLD = 2;
-	  private final int PREU_VEHICLE_BASIC = 3;
-	  private final int PREU_VEHICLE_GOLD = 4;
-	  private final int PREU_VEHICLE_LUXE = 6;
+	  private final int COST_VEHICLE_BASIC = 3;
+	  private final int COST_VEHICLE_GOLD = 4;
+	  private final int COST_VEHICLE_LUXE = 6;
 	  
 	public Lloguer(String data, int dies) {
 		
@@ -35,28 +35,27 @@ public class Lloguer {
     
     public Vehicle getVehicle() {return vehicle;}
     
-    public double quantitat() {
-    	
-    	double quantitat = 0;
-    	
+   public double unitatsDeCost() {
+    	double unitatsDeCost = 0;
     	switch (this.getVehicle().getCategoria()){
     		case Vehicle.BASIC:
-    			quantitat +=PREU_VEHICLE_BASIC;
+    			//quantitat +=PREU_VEHICLE_BASIC;
+    			unitatsDeCost += COST_VEHICLE_BASIC;
     			if(this.getDies() > DIES_INICIALS_BASIC) {
-    				quantitat += (this.getDies()- DIES_INICIALS_BASIC)*PLUS_LLOGUER_LLARG_BASIC;
+    				unitatsDeCost += (this.getDies()- DIES_INICIALS_BASIC)*PLUS_LLOGUER_LLARG_BASIC;
     			}
     			break;
     		case Vehicle.GOLD:
-    			quantitat +=PREU_VEHICLE_GOLD;
+    			unitatsDeCost += COST_VEHICLE_GOLD;
     			if(this.getDies() > DIES_INICIALS_GOLD) {
-    				quantitat += (this.getDies()-DIES_INICIALS_GOLD)*PLUS_LLOGUER_LLARG_GOLD;
+    				unitatsDeCost += (this.getDies()-DIES_INICIALS_GOLD)*PLUS_LLOGUER_LLARG_GOLD;
     			}
     			break;
     		case Vehicle.LUXE:
-    			quantitat += this.getDies()*PREU_VEHICLE_LUXE;
+    			unitatsDeCost += this.getDies()*COST_VEHICLE_LUXE;
     			break;
     	}
-    	return quantitat;
+    	return unitatsDeCost;
     }
     
     public int bonificacions() {
@@ -73,5 +72,6 @@ public class Lloguer {
         
         return bonificacions;
     }
+
 }
 
